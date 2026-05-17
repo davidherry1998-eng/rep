@@ -1,34 +1,41 @@
-const cta = document.querySelector(".cta");
+// Dom Element Declarations
+const openDrawerBtn = document.getElementById("open-drawer-btn");
+const closeDrawerBtn = document.getElementById("close-drawer-btn");
+const drawerOverlay = document.getElementById("drawer-overlay");
+
 const mainCard = document.querySelector(".main-card");
 const floatingCards = document.querySelectorAll(".floating-card");
 const coins = document.querySelectorAll(".coin");
 
-if (cta && mainCard) {
-  cta.addEventListener("click", function (event) {
-    event.preventDefault();
+// Step Panel Trigger Controls
+if (openDrawerBtn && drawerOverlay && closeDrawerBtn) {
+  // Opening Action Handler
+  openDrawerBtn.addEventListener("click", () => {
+    drawerOverlay.classList.add("active");
+    document.body.style.overflow = "hidden"; // Prevent background body bouncing scrolling
+  });
 
-    mainCard.animate(
-      [
-        { transform: "scale(1)" },
-        { transform: "scale(1.012)" },
-        { transform: "scale(1)" }
-      ],
-      {
-        duration: 450,
-        easing: "ease-out"
-      }
-    );
+  // Closing Action Handlers
+  closeDrawerBtn.addEventListener("click", () => {
+    drawerOverlay.classList.remove("active");
+    document.body.style.overflow = ""; // Re-enable background scrolling
+  });
 
-    alert(
-      "Educational mockup only: always verify risks before trusting financial or gambling claims."
-    );
+  // Click outside drawer content space wrapper to close it organically
+  drawerOverlay.addEventListener("click", (e) => {
+    if (e.target === drawerOverlay) {
+      drawerOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    }
   });
 }
 
+// Helper checker function
 function isDesktop() {
   return window.innerWidth > 1120;
 }
 
+// Mouse Interactive Parallax Movement Tracking
 window.addEventListener("mousemove", (event) => {
   if (!isDesktop()) return;
 
@@ -47,6 +54,7 @@ window.addEventListener("mousemove", (event) => {
   });
 });
 
+// Window reset adjustment boundary limits
 window.addEventListener("resize", () => {
   if (isDesktop()) return;
 
