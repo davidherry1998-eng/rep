@@ -137,13 +137,17 @@ a {
   color: rgba(255, 255, 255, 0.92);
 }
 
-.cta {
+.cta,
+button.cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 235px;
   padding: 15px 38px;
   border-radius: 7px;
+  border: none;
+  outline: none;
+  cursor: pointer;
   background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
   color: white;
   font-weight: 850;
@@ -152,7 +156,8 @@ a {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.cta:hover {
+.cta:hover,
+button.cta:hover {
   transform: translateY(-3px);
   box-shadow: 0 18px 42px rgba(0, 199, 214, 0.42);
 }
@@ -352,6 +357,260 @@ footer a {
   opacity: 0.5;
 }
 
+/* ==========================================================================
+   WHITE STEP-BY-STEP DRAWER COMPONENT
+   ========================================================================== */
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 17, 31, 0.55);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-content {
+  background: #ffffff;
+  color: #0f172a;
+  width: min(480px, 100%);
+  height: 100%;
+  padding: 28px 24px 22px;
+  box-shadow: -12px 0 40px rgba(15, 23, 42, 0.22);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: translateX(100%);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-overlay.active .drawer-content {
+  transform: translateX(0);
+}
+
+.drawer-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: #f1f5f9;
+  border: none;
+  color: #334155;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.drawer-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.drawer-content h2 {
+  font-size: 25px;
+  font-weight: 950;
+  color: #0f172a;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-right: 45px;
+  letter-spacing: -0.5px;
+}
+
+.drawer-subtitle {
+  font-size: 13px;
+  line-height: 1.35;
+  color: #64748b;
+  margin-bottom: 18px;
+  max-width: 390px;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.step-card {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-1px);
+}
+
+.step-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.step-body h4 {
+  font-size: 14.5px;
+  font-weight: 900;
+  margin-bottom: 3px;
+  line-height: 1.15;
+}
+
+.step-body p {
+  font-size: 12px;
+  line-height: 1.32;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Colored step variants */
+
+.step-blue {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.step-blue:hover {
+  background: #dbeafe;
+}
+
+.step-blue .step-icon {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
+}
+
+.step-blue h4 {
+  color: #1d4ed8;
+}
+
+.step-purple {
+  background: #faf5ff;
+  border-color: #e9d5ff;
+}
+
+.step-purple:hover {
+  background: #f3e8ff;
+}
+
+.step-purple .step-icon {
+  background: linear-gradient(135deg, #c084fc, #7c3aed);
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.22);
+}
+
+.step-purple h4 {
+  color: #7e22ce;
+}
+
+.step-green {
+  background: #ecfdf5;
+  border-color: #bbf7d0;
+}
+
+.step-green:hover {
+  background: #dcfce7;
+}
+
+.step-green .step-icon {
+  background: linear-gradient(135deg, #34d399, #059669);
+  box-shadow: 0 8px 18px rgba(5, 150, 105, 0.22);
+}
+
+.step-green h4 {
+  color: #047857;
+}
+
+.step-gold {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.step-gold:hover {
+  background: #fef3c7;
+}
+
+.step-gold .step-icon {
+  background: linear-gradient(135deg, #facc15, #d97706);
+  box-shadow: 0 8px 18px rgba(217, 119, 6, 0.22);
+}
+
+.step-gold h4 {
+  color: #b45309;
+}
+
+.step-red {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.step-red:hover {
+  background: #fee2e2;
+}
+
+.step-red .step-icon {
+  background: linear-gradient(135deg, #fb7185, #dc2626);
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.22);
+}
+
+.step-red h4 {
+  color: #b91c1c;
+}
+
+.drawer-tg-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-align: center;
+  padding: 14px 16px;
+  background: #0088cc;
+  color: white;
+  font-weight: 900;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-top: 4px;
+  box-shadow: 0 10px 24px rgba(0, 136, 204, 0.28);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.drawer-tg-btn:hover {
+  background: #0099e6;
+  transform: translateY(-2px);
+}
+
+.drawer-note {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
 @media (max-width: 1120px) {
   .page {
     padding: 28px 16px;
@@ -385,6 +644,63 @@ footer a {
     width: 100%;
     min-height: 145px;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+
+  .drawer-overlay {
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .drawer-content {
+    width: 100%;
+    height: auto;
+    max-height: 88vh;
+    border-radius: 22px 22px 0 0;
+    padding: 24px 18px 18px;
+    transform: translateY(100%);
+  }
+
+  .drawer-overlay.active .drawer-content {
+    transform: translateY(0);
+  }
+
+  .drawer-content h2 {
+    font-size: 22px;
+  }
+
+  .drawer-subtitle {
+    margin-bottom: 14px;
+  }
+
+  .steps-container {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .step-card {
+    padding: 10px;
+    grid-template-columns: 34px 1fr;
+  }
+
+  .step-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+    border-radius: 9px;
+  }
+
+  .step-body h4 {
+    font-size: 13.5px;
+  }
+
+  .step-body p {
+    font-size: 11.5px;
+    line-height: 1.25;
+  }
+
+  .drawer-tg-btn {
+    padding: 13px 14px;
+    font-size: 14.5px;
   }
 }
 
@@ -482,233 +798,6 @@ footer a {
     width: 56px;
     height: 56px;
     font-size: 30px;
-  }
-}
-/* ==========================================================================
-   UPDATED WHITE STEP-BY-STEP DRAWER COMPONENT
-   ========================================================================== */
-
-button.cta {
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.drawer-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(7, 17, 31, 0.55);
-  backdrop-filter: blur(5px);
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.drawer-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.drawer-content {
-  background: #ffffff;
-  color: #0f172a;
-  width: min(480px, 100%);
-  height: 100%;
-  padding: 28px 24px 22px;
-  box-shadow: -12px 0 40px rgba(15, 23, 42, 0.22);
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transform: translateX(100%);
-  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.drawer-overlay.active .drawer-content {
-  transform: translateX(0);
-}
-
-.drawer-close {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  background: #f1f5f9;
-  border: none;
-  color: #334155;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.drawer-close:hover {
-  background: #e2e8f0;
-  color: #0f172a;
-}
-
-.drawer-content h2 {
-  font-size: 25px;
-  font-weight: 950;
-  color: #0f172a;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  padding-right: 45px;
-  letter-spacing: -0.5px;
-}
-
-.drawer-subtitle {
-  font-size: 13px;
-  line-height: 1.35;
-  color: #64748b;
-  margin-bottom: 18px;
-  max-width: 390px;
-}
-
-.steps-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.step-card {
-  display: grid;
-  grid-template-columns: 38px 1fr;
-  gap: 12px;
-  align-items: flex-start;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  padding: 12px;
-  border-radius: 12px;
-  transition: 0.2s ease;
-}
-
-.step-card:hover {
-  background: #f1f5f9;
-  transform: translateY(-1px);
-}
-
-.step-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, #25d9d2, #00a7d8);
-  color: #ffffff;
-  display: grid;
-  place-items: center;
-  font-size: 19px;
-  box-shadow: 0 8px 18px rgba(0, 167, 216, 0.22);
-  flex-shrink: 0;
-}
-
-.step-body h4 {
-  font-size: 14.5px;
-  font-weight: 900;
-  color: #0f172a;
-  margin-bottom: 3px;
-  line-height: 1.15;
-}
-
-.step-body p {
-  font-size: 12px;
-  line-height: 1.32;
-  color: #64748b;
-  margin: 0;
-}
-
-.drawer-tg-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  text-align: center;
-  padding: 14px 16px;
-  background: #0088cc;
-  color: white;
-  font-weight: 900;
-  font-size: 15px;
-  border-radius: 10px;
-  margin-top: 4px;
-  box-shadow: 0 10px 24px rgba(0, 136, 204, 0.28);
-  transition: transform 0.2s, background-color 0.2s;
-}
-
-.drawer-tg-btn:hover {
-  background: #0099e6;
-  transform: translateY(-2px);
-}
-
-.drawer-note {
-  font-size: 11px;
-  line-height: 1.35;
-  color: #94a3b8;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Mobile / tablet */
-@media (max-width: 1120px) {
-  .drawer-overlay {
-    justify-content: center;
-    align-items: flex-end;
-  }
-
-  .drawer-content {
-    width: 100%;
-    height: auto;
-    max-height: 88vh;
-    border-radius: 22px 22px 0 0;
-    padding: 24px 18px 18px;
-    transform: translateY(100%);
-  }
-
-  .drawer-overlay.active .drawer-content {
-    transform: translateY(0);
-  }
-
-  .drawer-content h2 {
-    font-size: 22px;
-  }
-
-  .drawer-subtitle {
-    margin-bottom: 14px;
-  }
-
-  .steps-container {
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
-  .step-card {
-    padding: 10px;
-    grid-template-columns: 34px 1fr;
-  }
-
-  .step-icon {
-    width: 34px;
-    height: 34px;
-    font-size: 17px;
-    border-radius: 9px;
-  }
-
-  .step-body h4 {
-    font-size: 13.5px;
-  }
-
-  .step-body p {
-    font-size: 11.5px;
-    line-height: 1.25;
-  }
-
-  .drawer-tg-btn {
-    padding: 13px 14px;
-    font-size: 14.5px;
   }
 }
 
