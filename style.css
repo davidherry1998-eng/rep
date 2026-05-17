@@ -485,7 +485,7 @@ footer a {
   }
 }
 /* ==========================================================================
-   ADDED STYLES FOR THE STEP-BY-STEP DRAWER COMPONENT
+   UPDATED WHITE STEP-BY-STEP DRAWER COMPONENT
    ========================================================================== */
 
 button.cta {
@@ -497,14 +497,14 @@ button.cta {
 .drawer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(7, 17, 31, 0.6);
-  backdrop-filter: blur(4px);
+  background: rgba(7, 17, 31, 0.55);
+  backdrop-filter: blur(5px);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
   display: flex;
-  justify-content: flex-end; /* Places panel on the right on desktop */
+  justify-content: flex-end;
 }
 
 .drawer-overlay.active {
@@ -513,20 +513,18 @@ button.cta {
 }
 
 .drawer-content {
-  background: #0b1727; /* Matching site dark scheme */
-  color: #ffffff;
-  width: min(500px, 100%);
+  background: #ffffff;
+  color: #0f172a;
+  width: min(480px, 100%);
   height: 100%;
-  padding: 40px 30px;
-  box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+  padding: 28px 24px 22px;
+  box-shadow: -12px 0 40px rgba(15, 23, 42, 0.22);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   position: relative;
-  
-  /* Desktop Direction: Animates from right to left */
   transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .drawer-overlay.active .drawer-content {
@@ -535,88 +533,109 @@ button.cta {
 
 .drawer-close {
   position: absolute;
-  top: 20px;
-  right: 25px;
-  background: transparent;
+  top: 16px;
+  right: 20px;
+  background: #f1f5f9;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 36px;
+  color: #334155;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: 0.2s ease;
 }
 
 .drawer-close:hover {
-  color: var(--cyan);
+  background: #e2e8f0;
+  color: #0f172a;
 }
 
 .drawer-content h2 {
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--gold);
-  margin-top: 15px;
-  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: 950;
+  color: #0f172a;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-right: 45px;
+  letter-spacing: -0.5px;
 }
 
 .drawer-subtitle {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 35px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: #64748b;
+  margin-bottom: 18px;
+  max-width: 390px;
 }
 
 .steps-container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-bottom: 40px;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
 .step-card {
-  display: flex;
-  gap: 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 18px;
-  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  border-radius: 12px;
+  transition: 0.2s ease;
 }
 
-.step-num {
-  background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
-  color: white;
-  font-weight: 900;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.step-card:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+.step-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #25d9d2, #00a7d8);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  box-shadow: 0 8px 18px rgba(0, 167, 216, 0.22);
   flex-shrink: 0;
-  font-size: 15px;
 }
 
 .step-body h4 {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--cyan);
-  margin-bottom: 4px;
+  font-size: 14.5px;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 3px;
+  line-height: 1.15;
 }
 
 .step-body p {
-  font-size: 13.5px;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  line-height: 1.32;
+  color: #64748b;
+  margin: 0;
 }
 
 .drawer-tg-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
   text-align: center;
-  padding: 16px;
-  background: #0088cc; /* Official Telegram Blue color brand */
+  padding: 14px 16px;
+  background: #0088cc;
   color: white;
-  font-weight: 850;
-  font-size: 16px;
-  border-radius: 8px;
-  margin-top: auto; /* Pushes the button cleanly to the layout bottom */
-  box-shadow: 0 8px 24px rgba(0, 136, 204, 0.3);
+  font-weight: 900;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-top: 4px;
+  box-shadow: 0 10px 24px rgba(0, 136, 204, 0.28);
   transition: transform 0.2s, background-color 0.2s;
 }
 
@@ -625,23 +644,92 @@ button.cta {
   transform: translateY(-2px);
 }
 
-/* Responsive adjustment: Tablets and mobiles down-to-up layout animation rules */
+.drawer-note {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Mobile / tablet */
 @media (max-width: 1120px) {
   .drawer-overlay {
     justify-content: center;
-    align-items: flex-end; /* Aligns content to bottom edge */
+    align-items: flex-end;
   }
 
   .drawer-content {
     width: 100%;
-    height: 85vh; /* Takes up most of phone screen viewport vertically */
-    border-radius: 20px 20px 0 0;
-    
-    /* Responsive Direction: Animates from down to up */
+    height: auto;
+    max-height: 88vh;
+    border-radius: 22px 22px 0 0;
+    padding: 24px 18px 18px;
     transform: translateY(100%);
   }
 
   .drawer-overlay.active .drawer-content {
     transform: translateY(0);
+  }
+
+  .drawer-content h2 {
+    font-size: 22px;
+  }
+
+  .drawer-subtitle {
+    margin-bottom: 14px;
+  }
+
+  .steps-container {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .step-card {
+    padding: 10px;
+    grid-template-columns: 34px 1fr;
+  }
+
+  .step-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+    border-radius: 9px;
+  }
+
+  .step-body h4 {
+    font-size: 13.5px;
+  }
+
+  .step-body p {
+    font-size: 11.5px;
+    line-height: 1.25;
+  }
+
+  .drawer-tg-btn {
+    padding: 13px 14px;
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .drawer-content {
+    max-height: 92vh;
+  }
+
+  .drawer-content h2 {
+    font-size: 20px;
+  }
+
+  .drawer-subtitle {
+    font-size: 12px;
+  }
+
+  .step-body p {
+    display: none;
+  }
+
+  .step-card {
+    align-items: center;
   }
 }
