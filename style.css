@@ -65,21 +65,18 @@ a {
   padding: 36px 42px 52px;
   color: white;
   background:
-    linear-gradient(90deg, rgba(3, 13, 25, 0.96), rgba(5, 18, 31, 0.68)),
-    url(".hero {
-  min-height: 435px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px 18px 0 0;
-  padding: 36px 42px 52px;
-  color: white;
-  background:
-    linear-gradient(90deg, rgba(3, 13, 25, 0.92), rgba(5, 18, 31, 0.60)),
+    linear-gradient(
+      90deg,
+      rgba(3, 13, 25, 0.97) 0%,
+      rgba(3, 13, 25, 0.88) 35%,
+      rgba(5, 18, 31, 0.52) 70%,
+      rgba(5, 18, 31, 0.30) 100%
+    ),
     url("https://www.image2url.com/r2/default/images/1779041726989-82eb103b-d10f-4b7a-bf32-8cc51fd154c0.png");
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
-}");
+}
   background-size: cover;
   background-position: center;
 }
