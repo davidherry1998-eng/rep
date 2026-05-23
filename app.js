@@ -12,18 +12,26 @@ if (openDrawerBtn && drawerOverlay && closeDrawerBtn) {
   // Opening Action Handler
   openDrawerBtn.addEventListener("click", () => {
     drawerOverlay.classList.add("active");
-    document.body.style.overflow = "hidden"; // Prevent background body bouncing scrolling
+    document.body.style.overflow = "hidden";
   });
 
-  // Closing Action Handlers
+  // Closing Action Handler
   closeDrawerBtn.addEventListener("click", () => {
     drawerOverlay.classList.remove("active");
-    document.body.style.overflow = ""; // Re-enable background scrolling
+    document.body.style.overflow = "";
   });
 
-  // Click outside drawer content space wrapper to close it organically
+  // Click outside drawer content to close
   drawerOverlay.addEventListener("click", (e) => {
     if (e.target === drawerOverlay) {
+      drawerOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+
+  // Close drawer with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && drawerOverlay.classList.contains("active")) {
       drawerOverlay.classList.remove("active");
       document.body.style.overflow = "";
     }
