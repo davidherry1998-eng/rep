@@ -77,9 +77,6 @@ a {
   background-position: center right;
   background-repeat: no-repeat;
 }
-  background-size: cover;
-  background-position: center;
-}
 
 .hero::before {
   content: "";
@@ -114,7 +111,7 @@ a {
   font-size: 23px;
   font-weight: 900;
   color: var(--gold);
-  margin-bottom: 68px;
+  margin-bottom: 42px;
   letter-spacing: -0.4px;
 }
 
@@ -124,6 +121,27 @@ a {
   max-width: 760px;
   margin: 0 auto;
   text-align: center;
+}
+
+.hero-top-image {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 18px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.28),
+    0 0 34px rgba(37, 217, 210, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.hero-top-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero h1 {
@@ -276,18 +294,6 @@ button.cta:hover {
   font-size: 16px;
   line-height: 1.45;
   color: #111827;
-}
-
-.disclaimer {
-  padding: 16px 64px 26px;
-  color: #111827;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.disclaimer p {
-  border-top: 1px solid #e5e7eb;
-  padding-top: 18px;
 }
 
 footer {
@@ -723,7 +729,6 @@ footer a {
     padding: 36px 34px 24px;
   }
 
-  .disclaimer,
   footer {
     padding-left: 34px;
     padding-right: 34px;
@@ -738,10 +743,11 @@ footer a {
   .hero {
     padding: 28px 22px 42px;
     min-height: 440px;
+    background-position: center;
   }
 
   .brand {
-    margin-bottom: 55px;
+    margin-bottom: 34px;
   }
 
   .hero p {
@@ -758,7 +764,6 @@ footer a {
     margin: 0 auto;
   }
 
-  .disclaimer,
   footer {
     padding-left: 24px;
     padding-right: 24px;
@@ -777,7 +782,14 @@ footer a {
 
   .brand {
     font-size: 22px;
-    margin-bottom: 48px;
+    margin-bottom: 30px;
+  }
+
+  .hero-top-image {
+    width: 78px;
+    height: 78px;
+    border-radius: 18px;
+    margin-bottom: 14px;
   }
 
   .hero h1 {
