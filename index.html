@@ -1,167 +1,122 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JetGains</title>
+  <meta
+    name="description"
+    content="Kripto ile katıl, uçak oyunu sinyallerini Telegram üzerinden takip et."
+  />
+  <title>Uçak Oyunu Sinyalleri | Telegram</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div class="page-shell">
+    <div class="money money-one">₺</div>
+    <div class="money money-two">₿</div>
+    <div class="money money-three">$</div>
+    <div class="money money-four">₺</div>
 
-  <main class="page">
-    <section class="outer-card">
-      <div class="main-card">
+    <main class="hero">
+      <section class="content-card">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Telegram Sinyal Topluluğu
+        </div>
 
-        <section class="hero">
-          <div class="brand">JetGains</div>
-
-          <div class="hero-content">
-
-            <div class="hero-top-image">
-              <img
-                src="https://www.image2url.com/r2/default/images/1779553119505-86b96db3-f017-44b0-bb6e-0719fd8fc281.webp"
-                alt="JetGains visual"
-              />
-            </div>
-
-            <h1>
-              Cómo más de 10,000 latinos convirtieron $100 en $10,000 en 30 días
-  <span>usando señales de Aviator</span>
-            </h1>
-
-           <p>
-  Sin necesidad de conocimientos técnicos. Nuestro sistema anti-casino hackea el algoritmo de Aviator para entregarte señales automatizadas y rentables directamente a tu billetera cripto.
-</p>
-
-            <button class="cta" id="open-drawer-btn">Obtén cada señal durante el juego</button>
-          </div>
-        </section>
-
-        <section class="benefit-cards">
-          <div class="floating-card left top">
-            <div class="icon">🎧</div>
-            <h3>Soporte 24/7</h3>
-            <p>Tu soporte dedicado está siempre disponible de la mano de Pedro Alvarez para maximizar tus ganancias de forma segura.</p>
-          </div>
-
-          <div class="floating-card left bottom">
-            <div class="icon">😊</div>
-            <h3>Experiencia Gamificada</h3>
-            <p>Sin decisiones riesgosas, solo señales de predicción precisas en un mundo gamificado.</p>
-          </div>
-
-          <div class="floating-card right top">
-            <div class="icon">🎁</div>
-            <h3>Bonos y Recompensas</h3>
-            <p>Gana ingresos pasivos diarios y desbloquea recompensas extra con las ganancias de tus referidos.</p>
-          </div>
-
-          <div class="floating-card right bottom">
-            <div class="icon">📈</div>
-            <h3>Promesas de Crecimiento</h3>
-            <p>Garantizamos cero riesgo en tus jugadas y depósitos. Solo usa cripto y mira cómo se multiplica tu dinero.</p>
-          </div>
-        </section>
-
-        <section class="profile-section">
-          <div class="profile-image">
+        <div class="profile-wrap">
+          <div class="profile-ring">
+            <div class="profile-fallback" aria-hidden="true">KS</div>
             <img
-              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
-              alt="Pedro Alvarez fictional profile"
+              src="profile.jpg"
+              alt="Telegram sinyal topluluğu profil resmi"
+              class="profile-image"
+              onerror="this.style.display='none'"
             />
           </div>
 
-          <div class="profile-copy">
-            <h2>Pedro Alvarez — Fundador del Sistema JetGains</h2>
-            <p>
-              Pedro odia los casinos y ha transformado el mismo entretenimiento en un sistema de ganancias exclusivo,
-              diseñado únicamente para hacer crecer tu dinero y eliminar las pérdidas en el casino.
-            </p>
+          <div class="online-pill">
+            <span></span>
+            Aktif
           </div>
-        </section>
+        </div>
 
-        <footer>
-          <span>© Copyright. JetGains.</span>
+        <p class="eyebrow">KRİPTO İLE HIZLI KATILIM</p>
 
-          <div class="footer-links">
-            <span>Enlaces rápidos:</span>
-            <a href="#">FAQ</a>
+        <h1>
+          Kripto hesabınla yatırımını yap,
+          <span>uçak oyunu sinyallerini al</span>
+          ve stratejini geliştir.
+        </h1>
+
+        <p class="subheading">
+          Güncel sinyalleri Telegram üzerinden takip et. Hedefini plansız
+          tahminlerle değil, kontrollü bütçe ve risk yönetimiyle oluştur.
+        </p>
+
+        <div class="target-box" aria-label="Hedef gösterimi">
+          <div class="target-side">
+            <small>Başlangıç hedefi</small>
+            <strong>1.000 TL</strong>
           </div>
-        </footer>
 
+          <div class="target-arrow" aria-hidden="true">
+            <span></span>
+          </div>
+
+          <div class="target-side target-side-right">
+            <small>Potansiyel hedef</small>
+            <strong>10.000 TL</strong>
+          </div>
+        </div>
+
+        <button class="telegram-button" id="telegramButton" type="button">
+          <span class="telegram-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M21.7 3.2 18.5 19c-.2 1.1-.9 1.4-1.8.9l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.1 12.8l-4.8-1.5c-1-.3-1-1 .2-1.5L20.2 2.6c.9-.3 1.7.2 1.5.6Z"/>
+            </svg>
+          </span>
+          Telegram’dan Sinyalleri Al
+        </button>
+
+        <div class="trust-row">
+          <span>✓ Hızlı katılım</span>
+          <span>✓ Anlık bildirim</span>
+          <span>✓ Kripto ile işlem</span>
+        </div>
+
+        <p class="risk-note">
+          18+ • Kazanç garanti edilmez. Bahis ve şans oyunları maddi kayıp
+          riski taşır. Yalnızca kaybetmeyi göze alabileceğiniz tutarlarla
+          katılım sağlayın.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <div class="age-modal" id="ageModal" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="age-modal-card">
+      <div class="age-mark">18+</div>
+      <h2 id="ageTitle">Yaş doğrulaması</h2>
+      <p>Bu sayfaya devam etmek için 18 yaşından büyük olduğunuzu onaylayın.</p>
+
+      <div class="age-actions">
+        <button class="age-confirm" id="confirmAge" type="button">
+          18 yaşından büyüğüm
+        </button>
+        <button class="age-decline" id="declineAge" type="button">
+          Sayfadan ayrıl
+        </button>
       </div>
-
-      <div class="coin coin-1">₮</div>
-      <div class="coin coin-2">₮</div>
-      <div class="coin coin-3">₮</div>
-      <div class="coin coin-4">₮</div>
-
-    </section>
-  </main>
-
-  <div class="drawer-overlay" id="drawer-overlay">
-    <div class="drawer-content">
-      <button class="drawer-close" id="close-drawer-btn">&times;</button>
-
-      <h2>¿Cómo Empezar con JetGains?</h2>
-      <p class="drawer-subtitle">
-        Sigue estos 5 sencillos pasos para unirte a JetGains y multiplicar tus ganancias.
-      </p>
-
-      <div class="steps-container">
-
-        <div class="step-card step-blue">
-          <div class="step-icon">💬</div>
-          <div class="step-body">
-            <h4>Únete al canal de Telegram</h4>
-            <p>Entra al canal donde compartimos a los grandes ganadores, el estilo de vida de Pedro y obtén más detalles sobre la plataforma.</p>
-          </div>
-        </div>
-
-        <div class="step-card step-purple">
-          <div class="step-icon">👤</div>
-          <div class="step-body">
-            <h4>Escríbele a Pedro</h4>
-            <p>Un contacto directo y personal a través del cual podrás obtener acceso exclusivo a JetGains.</p>
-          </div>
-        </div>
-
-        <div class="step-card step-green">
-          <div class="step-icon">₮</div>
-          <div class="step-body">
-            <h4>Deposita tu inversión</h4>
-            <p>Usa tu billetera cripto para ingresar tu saldo al sistema como inversión activa.</p>
-          </div>
-        </div>
-
-        <div class="step-card step-gold">
-          <div class="step-icon">🎁</div>
-          <div class="step-body">
-            <h4>Reclama recompensas</h4>
-            <p>Recibe los beneficios de un ingreso pasivo diario generado por tu dinero todos los días.</p>
-          </div>
-        </div>
-
-        <div class="step-card step-red">
-          <div class="step-icon">⚠️</div>
-          <div class="step-body">
-            <h4>Compra señales</h4>
-            <p>Señales predictivas que muestran el intervalo de los multiplicadores estimados para disparar tu dinero.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <a
-        href="tg://resolve?domain=pedrotheboss_bot&start=link_PebatJis9x"
-        class="drawer-tg-btn"
-      >
-        🚀 Unirse a mi Telegram
-      </a>
-
-      <p class="drawer-note">
-        Revisa siempre los riesgos antes de interactuar con ofertas relacionadas con señales, cripto o juegos de azar.
-      </p>
     </div>
   </div>
 
